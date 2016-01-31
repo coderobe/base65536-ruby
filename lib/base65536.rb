@@ -22,7 +22,7 @@ require 'json'
 
 module Base65536
   def self.encode(buf)
-    get_block_start = JSON.parse(File.read('./get-block-start.json'))
+    get_block_start = JSON.parse(File.read(File.expand_path '../get-block-start.json', __FILE__))
     strs = []
     i = 0
     while i < buf.length
@@ -37,7 +37,7 @@ module Base65536
   end
 
   def self.decode(str)
-    get_b2 = JSON.parse(File.read('./get-b2.json'))
+    get_b2 = JSON.parse(File.read(File.expand_path '../get-b2.json', __FILE__))
     bufs = []
     done = false
     i = 0
@@ -58,3 +58,4 @@ module Base65536
     bufs.join ''
   end
 end
+
