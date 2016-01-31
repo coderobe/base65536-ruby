@@ -8,7 +8,7 @@ def encode(buf)
   i = 0
   while i < buf.length
     b1 = buf[i]
-    b2 = if i + 1 < buf.length then buf[i+1] else -1 end
+    b2 = i + 1 < buf.length ? buf[i + 1] : -1
     codepoint = get_block_start[b2.to_s] + b1
     str = [codepoint].pack('U*')
     strs << str
