@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.authors     = ['coderobe', 'nilsding', 'pixeldesu']
   s.email       = 'team@nightb.ug'
   s.require_paths = ['lib']
-  s.files       = `git ls-files -z`.split('\x0').reject { |f| f.match(%r{^(test|spec|features)/}) }
+  s.files       = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   s.homepage    = 'https://github.com/Nightbug/base65536-ruby'
   s.license     = 'MIT'
 end
