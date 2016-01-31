@@ -27,8 +27,8 @@ def decode(str)
     codePoint = str.each_codepoint.to_a[i]
     b1 = codePoint & ((1 << 8) -1)
     b2 = get_b2[codePoint - b1]
-    raise "Not a valid Base65536 code point: #{codePoint}" if b2 === nil
-    buf = if b2 === -1 then [b1].bytes else [b1, b2].bytes end
+    raise "Not a valid Base65536 code point: #{codePoint}" if b2 == nil
+    buf = if b2 == -1 then [b1].bytes else [b1, b2].bytes end
     if buf.length == 1 and done then raise "Base65536 sequence continued after final byte" end
     bufs << buf
     if codePoint >= (1 << 16) then i += 1 end
