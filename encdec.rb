@@ -1,7 +1,6 @@
-#!/bin/ruby
+#!/usr/bin/env ruby
 
 require 'json'
-require 'pry'
 
 def encode(buf)
   get_block_start = JSON.parse(File.read('./get-block-start.json'))
