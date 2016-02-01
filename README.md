@@ -26,8 +26,6 @@ For details of how these code points were chosen and why they are thought to be 
 
 ## Known Bugs
 
-base65536 does not work with files, as file bytestreams mostly consist of Unicode characters that
-are not considered safe by base65536gen, these will be skipped and cause the files to be corrupted.
+Apparently our Ruby implementation does not work with binary, yet the original library in JavaScript does. Needs some investigation, but it seems that buffer handling is severily different between those two languages.
 
-A simple way of solving this is to first encode the bytes into plain text (with base64 for example)
-and then encoding them with base65536, which is a rather hacky fix.
+A temporarily fix to work with binary data is to encode them to plaintext based methods (e.g. Base64) and then to Base65536.
